@@ -1,0 +1,33 @@
+stages:
+  - build
+  - test
+
+
+
+build-release:
+  tags:
+    - docker
+    - linux
+  stage: build
+  image: rust:latest
+  script:
+    - echo "Building"
+    - cd ./app
+    - rustup target add thumbv7m-none-eabi
+    - cargo install cargo-binutils
+    - rustup component add llvm-tools-preview
+    - cargo size --release -- -A
+  artifacts:
+    paths:
+      - ./app/target/thumbv7m-none-eabi/release/embedded_template
+
+test-knx-wizard-firmware-release:
+  tags:
+    - docker
+    - linux
+  stage: test
+  image: rust:latest
+  script:
+    - echo "Building"
+    - cd ./lib/example_lib
+    - cargo test

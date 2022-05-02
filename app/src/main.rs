@@ -56,36 +56,8 @@ mod app {
     ///
     /// [source](https://rtic.rs/dev/book/en/by-example/app_init.html)
     fn init(cx: init::Context) -> (Shared, Local, init::Monotonics) {
-        // #########################################################################################
-        // PERIPHERALS
-        // Take ownership over the raw flash and rcc devices and convert them into the corresponding
-        // HAL structs
-        // let mut flash = cx.device.FLASH.constrain();
-        // let rcc = cx.device.RCC.constrain();
-
-        let systick = cx.core.SYST;
-
-        // Initialize the monotonic (SysTick rate in QEMU is 12 MHz)
-        let mono = Systick::new(systick, 12_000_000);
-
-        // Freeze the configuration of all the clocks in the system and store the frozen frequencies
-        // in `clocks`
-        // let clocks = rcc.cfgr.freeze(&mut flash.acr);
-
-
-        // Prepare the alternate function I/O registers
-        // let mut afio = cx.device.AFIO.constrain();
-
-        // preparing peripherals
-        // let mut gpioa = cx.device.GPIOA.split();
-        // let mut gpiob = cx.device.GPIOB.split();
-
-
-        // #########################################################################################
-        // resource structs
-        // #########################################################################################
         (Shared {},
          Local {},
-         init::Monotonics(mono))
+         init::Monotonics())
     }
 }
