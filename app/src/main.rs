@@ -1,23 +1,13 @@
-#![deny(unsafe_code)]
-#![deny(warnings)]
-#![no_main]
 #![no_std]
+#![no_main]
+// #![deny(warnings)]    // throw error on warning
+// #![deny(unsafe_code)] // throw error when using unsafe code
 
-// #################################################################################################
-// Modules
-
-// #################################################################################################
-// Imports
 use panic_halt as _;
 use rtic::app;
-use systick_monotonic::{Systick};
 
-#[app(device = stm32f1xx_hal::pac, peripherals = true, dispatchers = [SPI1])]
+#[app(device = stm32f1xx_hal::pac)]
 mod app {
-    use super::*;
-
-    #[monotonic(binds = SysTick, default = true)]
-    type HandleBufferMono = Systick<100>; // 100 Hz / 10 ms granularity
 
     #[shared]
     /// Critical sections are required to access #\[shared\] resources in a data race-free manner and to achieve this the shared field of the passed Context implements the Mutex trait for each shared resource accessible to the task.
