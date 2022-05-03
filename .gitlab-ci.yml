@@ -2,8 +2,6 @@ stages:
   - build
   - test
 
-
-
 build-release:
   tags:
     - docker
@@ -21,7 +19,7 @@ build-release:
     paths:
       - ./app/target/thumbv7m-none-eabi/release/embedded_template
 
-test-release:
+test:
   tags:
     - docker
     - linux
