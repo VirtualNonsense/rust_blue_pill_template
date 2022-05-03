@@ -21,7 +21,7 @@ build-release:
     paths:
       - ./app/target/thumbv7m-none-eabi/release/embedded_template
 
-test-knx-wizard-firmware-release:
+test-release:
   tags:
     - docker
     - linux
