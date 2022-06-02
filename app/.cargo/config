@@ -1,5 +1,5 @@
 [target.thumbv7m-none-eabi]
-runner = 'arm-none-eabi-gdb'
+runner = 'arm-none-eabi-gdb -x stm32f103c8_blue_pill.cfg'
 rustflags = [
     "-C", "link-arg=-Tlink.x",
 ]
