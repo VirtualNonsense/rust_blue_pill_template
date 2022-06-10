@@ -1,7 +1,9 @@
 [package]
-name = "embedded_template" # make sure to change it in the ci when changing it here
+name = "{{project-name}}"
+# name = "embedded_template" # make sure to change it in the ci when changing it here
 version = "0.1.0"
 edition = "2021"
+authors = ["{{authors}}"]
 
 [profile.release]
 lto = true                 # Link-time-optimizations for further size reduction
