@@ -32,7 +32,7 @@ systick-monotonic = "1.0.0"                   # Used for timed interruped
 # Optional Libraries
 # nb = "^0.1.3"                               # Minemal nonblocking i/o layer
 # heapless = "0.7.10"                         # a nice library that provides easy to use buffer and queues
-example_lib = { path = '../lib/example_lib' }
+example_lib = { path = 'lib/example_lib' }
 
 [dependencies.stm32f1xx-hal]
 version = "^0.8.0"

@@ -25,7 +25,7 @@ configured correctly. (assuming you are using clion)
 # Project strucutre
 A quick overview over the project structure that I came up with
 
-## `./app/`
+## `./`
 This directory contains the main programm that will be build for the bluepill board. 
 
 Here is a quick reference over the important locations and a quick description:
@@ -35,8 +35,8 @@ Here is a quick reference over the important locations and a quick description:
  - `memory.x`: device specific information such as memory capacity
  - `strm32f103c8_blue_pill.cfg`: OCD Config for blue pill board
  - binary locations
-   - `./app/target/thumbv7m-none-eabi/release/<projectname>`
-   - `./app/target/thumbv7m-none-eabi/debug/<projectname>`
+   - `./target/thumbv7m-none-eabi/release/{{project-name}}`
+   - `./target/thumbv7m-none-eabi/debug/{{project-name}}`
 
 Unfortunately everything that is contained within this folder cannot be tested via the build in rust test kit, due
 to the fact that everything will be build for the target architecture.
