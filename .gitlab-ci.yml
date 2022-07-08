@@ -1,6 +1,26 @@
 stages:
+  - doc
   - build
   - test
+
+pages:
+  stage: doc
+  tags:
+    - docker
+    - linux
+  image: rust:latest
+
+  script:
+    - cd {{project-name}}
+    - cargo doc --target-dir ../public
+
+  artifacts:
+    paths:
+      - public
+
+  only:
+    - master
+
 
 build-release:
   tags:
