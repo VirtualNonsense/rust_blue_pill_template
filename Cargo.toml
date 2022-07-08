@@ -36,10 +36,6 @@ systick-monotonic = "1.0.0"                   # Used for timed interruped
 
 
 {% if sublibrary!=" " %}
-[workspace]
-members = [
-    "lib/*"
-]
 {{sublibrary}} = { path = 'lib/{{sublibrary}}' }
 {% endif %}
 
