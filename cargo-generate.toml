@@ -2,7 +2,7 @@
 type="string"
 prompt="How should I call the library? (Press enter to skip the creation of a library)"
 default=""
-regex="^[a-zA-Z0-9]+([-_][a-zA-Z0-9]+)*$"
+regex="^(([a-zA-Z0-9]+([-_][a-zA-Z0-9]+))|\s){1}$"
 
 [hooks]
 post=["build.rhai"]
