@@ -11,10 +11,7 @@ debug = true               # debug symbols are nice and apperantly do not increa
 opt-level = 's'            # optimize for size. We only have 64kB
 codegen-units = 1          # More code generation units allows more of a crate to be processed in parallel possibly reducing compile time, but may produce slower code
 
-[workspace]
-members = [
-    "lib/*"
-]
+
 
 [profile.dev]
 lto = false
@@ -36,7 +33,16 @@ systick-monotonic = "1.0.0"                   # Used for timed interruped
 # Optional Libraries
 # nb = "^0.1.3"                               # Minemal nonblocking i/o layer
 # heapless = "0.7.10"                         # a nice library that provides easy to use buffer and queues
-{% if sublibrary!=" " %} {{sublibrary}} = { path = 'lib/{{sublibrary}}' }
+
+
+{% if sublibrary!=" " %}
+[workspace]
+members = [
+    "lib/*"
+]
+{{sublibrary}} = { path = 'lib/{{sublibrary}}' }
+{% endif %}
+
 
 [dependencies.stm32f1xx-hal]
 version = "^0.8.0"
