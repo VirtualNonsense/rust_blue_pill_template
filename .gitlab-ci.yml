@@ -13,10 +13,11 @@ build-release:
     - rustup target add thumbv7m-none-eabi
     - cargo install cargo-binutils
     - rustup component add llvm-tools-preview
+    - cd ./{{project-name}}
     - cargo size --release -- -A
   artifacts:
     paths:
-      - ./target/thumbv7m-none-eabi/release/embedded_template
+      - ./target/thumbv7m-none-eabi/release/{{project-name}}
 
 test:
   tags:
