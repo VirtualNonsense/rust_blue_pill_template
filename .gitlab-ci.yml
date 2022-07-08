@@ -26,5 +26,5 @@ test:
   image: rust:latest
   script:
     - echo "Building"
-    - cd ./lib/example_lib
+    - cd ./lib/{{sublibrary}}
     - cargo test
