@@ -36,7 +36,7 @@ systick-monotonic = "1.0.0"                   # Used for timed interruped
 # Optional Libraries
 # nb = "^0.1.3"                               # Minemal nonblocking i/o layer
 # heapless = "0.7.10"                         # a nice library that provides easy to use buffer and queues
-{{sublibrary}} = { path = 'lib/{{sublibrary}}' }
+{% if sublibrary!=" " %} {{sublibrary}} = { path = 'lib/{{sublibrary}}' }
 
 [dependencies.stm32f1xx-hal]
 version = "^0.8.0"
