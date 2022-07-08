@@ -4,5 +4,15 @@ prompt="How should I call the library? (Press enter to skip the creation of a li
 default=" "
 regex="^(([a-zA-Z0-9]+(([-_]{1}[a-zA-Z0-9]+)*))|\\s){1}$"
 
+[placeholder.nb]
+type="bool"
+prompt="Would you like to include 'nb'? It provides a minimal nonblocking i/o later"
+default=true
+
+[placeholder.heapless]
+type="bool"
+prompt="Would you like to include 'heapless'? It provides easy to use buffer and queues"
+default=true
+
 [hooks]
 post=["build.rhai"]
