@@ -11,15 +11,20 @@ pages:
   image: rust:latest
 
   script:
+    - mkdir -p public
+    - rustup target add thumbv7m-none-eabi
     - cd {{project-name}}
-    - cargo doc --target-dir ../public
-
+    - cargo doc --no-deps
+    - cp ./target/thumbv7m-none-eabi/doc/* ../public -r
+    - echo "<meta http-equiv=refresh content=0;url={{project-name}}/index.html>" > ../public/index.html
+    - cd ../public/
+    - ls -la
   artifacts:
     paths:
       - public
 
   only:
-    - master
+    - main
 
 
 build-release:
