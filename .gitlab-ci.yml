@@ -37,7 +37,7 @@ build-release:
     - cargo size --release -- -A
   artifacts:
     paths:
-      - ./target/thumbv7m-none-eabi/release/{{project-name}}
+      - ./{{project-name}}/target/thumbv7m-none-eabi/release/{{project-name}}
 
 test:
   tags:
