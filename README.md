@@ -25,7 +25,7 @@ configured correctly. (assuming you are using clion)
 # Project strucutre
 A quick overview over the project structure that I came up with
 
-## `./`
+## `./{{project-name}}`
 This directory contains the main programm that will be build for the bluepill board. 
 
 Here is a quick reference over the important locations and a quick description:
@@ -48,8 +48,8 @@ of the used libraries already tested in the external crates.
 
 ## `./lib/`
 This folder should contain all custom crates that should be tested. It might be reasonable to split up the code into 
-crates as shown in `./lib/example_lib/`.
+crates as shown in `./lib/{{sublibrary}}/`.
 
-### `./lib/example_lib/src/lib.rs`
+### `./lib/{{sublibrary}}/src/lib.rs`
 This file is used to expose the library to other crates.
 Use it for your unittests as well. 
