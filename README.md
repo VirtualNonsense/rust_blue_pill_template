@@ -53,3 +53,8 @@ crates as shown in `./lib/{{sublibrary}}/`.
 ### `./lib/{{sublibrary}}/src/lib.rs`
 This file is used to expose the library to other crates.
 Use it for your unittests as well. 
+
+
+# Troubleshooting
+- cargo generate results in an ssh error: this is a [confirmed bug](https://github.com/cargo-generate/cargo-generate/issues/630) with a workaround. The easiest way is to just use wsl instead if you have already installed it
+- pycharm: No rust toolchain -> open `./{{project-name}}/Cargo.toml` and click attach.  
