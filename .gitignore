@@ -1,5 +1,4 @@
 /.idea/*.xml
-/.idea/*.iml
 *.map
 # Created by https://www.toptal.com/developers/gitignore/api/clion,rust
 # Edit at https://www.toptal.com/developers/gitignore?templates=clion,rust
