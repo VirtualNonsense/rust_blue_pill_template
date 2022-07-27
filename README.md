@@ -22,6 +22,15 @@ Here are a couple of nice references in case you are just starting out
 configured correctly. (assuming you are using clion)
 
 
+# Generated Project Documentation
+The Pages job located in [.gitlab-ci.yml](./.gitlab-ci.yml) is generating a documentation page by using 
+[rust doc](https://doc.rust-lang.org/rustdoc/what-is-rustdoc.html). The link is accessible via `Setting > Pages` on the 
+Gitlab project page.
+
+It might be necessary to enable the pages job. This can be done via 
+`Settings > General > Visibility, project features, permissions > Pages`
+
+
 # Project strucutre
 A quick overview over the project structure that I came up with
 
